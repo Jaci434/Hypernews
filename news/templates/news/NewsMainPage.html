@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+    {% load static %}
+    <link rel="stylesheet" target="_blank" href="{% static 'css/base.css' %}">
+    <style>
+        #q{text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>Hyper news</h2>
+    <form method="get">
+        <label for="q">News title search:</label><br>
+        <input style="padding: 7px 12px" type="text" id="q" name="q">
+        <input style="padding: 7px 12px" type="submit" value="Submit">
+    </form>
+    <br>
+    {% regroup posts|dictsortreversed:"created" by created|slice:":-9" as news_list %}
+    <ul>
+    {% for article in news_list %}
+        <h4>{{ article.grouper }}</h4>
+            <ul>
+            {% for data in article.list %}
+            <li><a target="_blank" href="/news/{{ data.link }}/"> {{ data.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <br>
+    {% endfor %}
+    <a id="add_new_page" href="/news/create/">Add your own news</a>
+</body>
+</html>

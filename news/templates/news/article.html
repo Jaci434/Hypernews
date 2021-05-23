@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    {% load static %}
+    <link rel="stylesheet" target="_blank" href="{% static 'css/base.css' %}">
+</head>
+<body style="margin-left: 20%;">
+    <h2 style="margin-bottom: 50px;">{{title}}</h2>
+    <p>{{created}}</p>
+    <p>{{text}}</p>
+    <br>
+    <a id="news_back" href="/news/">the news</a>
+</body>
+</html>
