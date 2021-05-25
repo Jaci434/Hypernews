@@ -6,7 +6,14 @@ Using python, Django, HTML, CSS.
 To open the website:
 	1. Download the project. 
 	2. In terminal open the folder where you downloaded the project.
-	3. Open virtual enviroment - copy in terminal:
+	3. Create virtual enviroment:
+		If you dont have installed virtual enviroment yet: pip install virtualenv
+		Then create it:
+		Unix:
+			python -m venv hyperskill-django
+		Windows:
+			python -m venv hyperskill-django
+	4. Open virtual enviroment - copy in terminal:
 		Windows: 
 			hyperskill-django\Scripts\activate - to activate the virtual enviroment
 			pip install Django==2.2 - if the Django is not installed
